@@ -39,6 +39,7 @@ app.get('/', (req, res) => {
 });
 
 // Route to handle POST request from form-data
+//caching results for 1 day 
 app.post('/exchange-rate',cache('1 day'),  (req, res) => {
   const { exchangeFrom, exchangeTo } = req.body;
   console.log(req.body);  
