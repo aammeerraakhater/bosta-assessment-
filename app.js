@@ -4,7 +4,7 @@ const rateLimit = require('express-rate-limit');
 const apicache = require('apicache');
 
 const app = express(); // Create an instance of the Express application
-const port = 3000; //port number 
+const port = process.env.PORT || 3000; //port number 
 
 
 // limiting to 4 requests per day 

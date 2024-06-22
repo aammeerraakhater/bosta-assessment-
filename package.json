@@ -2,7 +2,7 @@
   "name": "bosta-task",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "start": "nodemon app",
     "dev": "nodemon app"
@@ -15,5 +15,8 @@
     "express": "^4.19.2",
     "express-rate-limit": "^7.3.1",
     "nodemon": "^3.1.4"
-  }
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }   
 }
