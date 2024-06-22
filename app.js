@@ -50,7 +50,7 @@ app.post('/exchange-rate',cache('1 day'),  (req, res) => {
   console.log(exchangeTo);
 // Replace with your actual API key from a currency conversion service
   const API_URL = 'https://api.apyhub.com/data/convert/currency/multiple';
-  const API_KEY =  'APY09aM5cFSPPK8IyxQwt9hJhqlDslLG3crUmxT030CCWZprQbkUNIlZL6bAvvti99Lc61EdhxEW';//'APY0XiRd3eVtVyTwJzgiz8OGoP8W7KwUq0Qx3BYhvOZZPxPiInGUW9ETkaB6rbwFJVTAFsmZaMUmb';
+  const API_KEY ='';  //instert your api key here 
   var options = {
     method: 'POST',
     url: API_URL,

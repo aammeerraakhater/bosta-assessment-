@@ -44,7 +44,8 @@
 
 - Install code using github repo through the green button with ( Code ) text and either download through zip, https, ssh.
 - After downloading you need to download modules, you can dowload all the modules through `npm install`
-- supposedly the app will run if not you need to run the app thriygh the terminal ` nodemon app`
+- generate your own api key from the api website using email and insert in in the app file
+- supposedly the app will run if not you need to run the app through the terminal ` nodemon app`
 
 ## Usage
 

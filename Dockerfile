@@ -1,6 +1,6 @@
-from node:18
+from node:18.16.1
 WORKDIR /
-COPY server/package.json server/package-lock.json
+COPY package.json package-lock.json
 RUN npm install
-COPY server .
+COPY . .
 ENTRYPOINT npm run start
