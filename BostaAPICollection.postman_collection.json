@@ -1,0 +1,54 @@
+{
+	"info": {
+		"_postman_id": "78949239-58b4-4faa-9bac-361f28a20b57",
+		"name": "Bosta API collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26403073"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:3000",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"exchangeFrom\":\"inr\",\r\n    \"exchangeTo\":[\"egp\", \"azn\", \"usd\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_base}}/exchange-rate",
+					"host": [
+						"{{url_base}}"
+					],
+					"path": [
+						"exchange-rate"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "inr",
+							"disabled": true
+						},
+						{
+							"key": "to",
+							"value": "egy",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "url_base",
+			"value": "http://127.0.0.1:3000"
+		}
+	]
+}
