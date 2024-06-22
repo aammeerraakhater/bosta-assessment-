@@ -48,6 +48,7 @@
 
 ## Usage
 
+- App contains rate limiting and caching
 - After runing the application you can test or use through postman using `http://localhost:3000/exchange-rate` and sending data through body and then select raw, it should look something like this:
   {
   "exchangeFrom":"inr",
