@@ -1,21 +1,31 @@
 const express = require('express');
 const axios = require('axios').default;
-const rateLimit = require('express-rate-limit')
+const rateLimit = require('express-rate-limit');
+const apicache = require('apicache');
 
-const app = express();
-const port = 3000;
+const app = express(); // Create an instance of the Express application
+const port = 3000; //port number 
+
+
 // limiting to 4 requests per day 
 const limiter = rateLimit({
     windowMs: 60 * 60 * 1000 * 24, //set to 1 day
-    max: 2
+    max: 4
 })
 app.use(limiter);
+
+
 // Middleware to parse URL-encoded form data
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 
 // Middleware to parse JSON data
 app.use(express.json());
+
+
+//Init cache 
+let cache = apicache.middleware;
+
 
 // Route to handle GET request for form (for testing via browser)
 app.get('/', (req, res) => {
@@ -29,7 +39,7 @@ app.get('/', (req, res) => {
 });
 
 // Route to handle POST request from form-data
-app.post('/exchange-rate', (req, res) => {
+app.post('/exchange-rate',cache('1 day'),  (req, res) => {
   const { exchangeFrom, exchangeTo } = req.body;
   console.log(req.body);  
   if (!exchangeFrom | !exchangeTo){
