@@ -8,7 +8,6 @@
 - [Installation](#installation)
 - [Usage](#usage)
 - [API Endpoints](#api-endpoints)
-- [License](#license)
 
 ## Task requirements
 
@@ -55,3 +54,14 @@
   "exchangeTo":["egp", "azn", "usd"]
   }
   where exchangeFrom is a string of the source currency, and exchangeTo is the array of target currencies in string
+
+## API Endpoint
+
+- POST /exchange-rate
+- Description: Sends data to the api currency exchanger and receives required rate data.
+- Response:
+  {
+  "egp_azn": 0.035666421,
+  "egp_egp": 1,
+  "egp_usd": 0.020980254
+  }
