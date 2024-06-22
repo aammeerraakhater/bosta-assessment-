@@ -1,9 +1,15 @@
 const express = require('express');
 const axios = require('axios').default;
+const rateLimit = require('express-rate-limit')
 
 const app = express();
 const port = 3000;
-
+// limiting to 4 requests per day 
+const limiter = rateLimit({
+    windowMs: 60 * 60 * 1000 * 24, //set to 1 day
+    max: 2
+})
+app.use(limiter);
 // Middleware to parse URL-encoded form data
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
@@ -33,7 +39,7 @@ app.post('/exchange-rate', (req, res) => {
   console.log(exchangeTo);
 // Replace with your actual API key from a currency conversion service
   const API_URL = 'https://api.apyhub.com/data/convert/currency/multiple';
-  const API_KEY =  'APY0ulpBRMyN3tTnvwJcOZwkLsRgO0mIq8f3zh1wnAFY5vuGhW1qUOQFOFIx4uXu78U6n05gG';//'APY0XiRd3eVtVyTwJzgiz8OGoP8W7KwUq0Qx3BYhvOZZPxPiInGUW9ETkaB6rbwFJVTAFsmZaMUmb';
+  const API_KEY =  'APY09aM5cFSPPK8IyxQwt9hJhqlDslLG3crUmxT030CCWZprQbkUNIlZL6bAvvti99Lc61EdhxEW';//'APY0XiRd3eVtVyTwJzgiz8OGoP8W7KwUq0Qx3BYhvOZZPxPiInGUW9ETkaB6rbwFJVTAFsmZaMUmb';
   var options = {
     method: 'POST',
     url: API_URL,
